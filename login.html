@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>测试页面</title>
+    <meta charset="utf-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        请输入用户名：<input type="number" ng-model="num1" /><br />
+        请输入登录密码：<input type="number" ng-model="num2" /><br />
+        <button ng-click="login()">登录</button><br />{{getResult}}
+    </div>
+
+
+    <script>
+        var app = angular.module('myApp', [])
+        app.controller('myCtrl', function ($scope) {
+            $scope.num1 = null;
+            $scope.num2 = null;
+            $scope.login = function () {
+                if ($scope.num1 == '123' && $scope.num2 == '123') {
+                    return $scope.getResult = "Success!";
+                } else {
+                    $scope.num1 = null;
+                    $scope.num2 = null;
+                    return $scope.getResult = "error";                
+                }
+            }
+
+            
+          
+                
+                
+               
+               
+
+                
+                                   
+
+            });
+    </script>
+
+
+</body>
+</html>
